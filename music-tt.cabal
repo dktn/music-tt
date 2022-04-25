@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           music-tt
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/music-tt#readme>
+homepage:       https://github.com/dktn/music-tt#readme
+bug-reports:    https://github.com/dktn/music-tt/issues
+author:         Adam Szlachta
+maintainer:     adam.szlachta@gmail.com
+copyright:      2022 Adam Szlachta
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dktn/music-tt
+
+library
+  exposed-modules:
+      Music.Theory
+      Music.Types
+  other-modules:
+      Paths_music_tt
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable music-tt
+  main-is: Main.hs
+  other-modules:
+      Paths_music_tt
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , music-tt
+  default-language: Haskell2010
+
+test-suite music-tt-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_music_tt
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , music-tt
+  default-language: Haskell2010
